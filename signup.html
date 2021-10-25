@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+   <head>
+   
+      <title>Signup</title>
+      
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+      <link href="./css/style.css" rel="stylesheet"/>
+  
+      <link href="./css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      <script src="./js/materialize.js"></script>
+
+    </head>
+    
+    <body>
+
+      <!-- Signup Code Start -->
+      
+        <div class="container">
+    
+          <h5 class="left-align teal-text center"><u>Signup Form</u></h5>
+          
+          <br/>
+    
+          <div class="container">
+    
+              <form id="form" action="./signup.php" method="POST">
+                      
+                  <div class="input-field">
+                                  
+                      <input 
+                                  
+                        id="name"
+                        class="validate"
+                        type="text"
+                        name="name"
+                        required >
+            
+                      </input>
+            
+                      <label for="name"> <strong>Name</strong> </label>
+                                   
+                    </div>
+
+                    <br/>
+
+                    <div class="input-field">
+                                  
+                      <input 
+                                  
+                        id="email"
+                        class="validate"
+                        type="text"
+                        name="email"
+                        required >
+            
+                      </input>
+            
+                      <label for="email"> <strong>Email</strong> </label>
+                                   
+                    </div>
+            
+                    <br/>
+            
+                    <div class="input-field">
+                                  
+                      <input 
+                                  
+                        id="password"
+                        class="validate"
+                        type="password"
+                        name="password"
+                        required >
+            
+                      </input>
+            
+                      <label for="password"> <strong>Password</strong> </label>
+                                   
+                    </div>
+                    
+                    <br/>
+
+                    <div class="input-field">
+                                  
+                      <input 
+                                  
+                        id="confirmpassword"
+                        class="validate"
+                        type="password"
+                        name="confirmpassword"
+                        required >
+            
+                      </input>
+            
+                      <label for="confirmpassword"> <strong>Confirm Password</strong> </label>
+                                   
+                    </div>
+
+                    <br/>
+
+                    <p style="text-align:left;">By signing Up, you agree on our <a href="#">Privacy Policy</a>.</p>
+
+                    <div class="d-flex justify-content-center">  
+                      
+                      <button
+                                      
+                        type="submit"
+                        name="submit"
+                        value="submit"
+                        id="submit"
+                        class="button" >
+                                          
+                        <strong>Signup</strong>
+            
+                        <i class="material-icons">login</i>
+            
+                      </button>
+                     
+                    </div>
+            
+                </form>
+                
+            </div>
+             
+        <br/><br/><br/>
+    
+    </div>
+ 
+    <script>
+
+        $(document).ready(function(){
+  
+        var form = $('#form');
+
+            $.ajax({
+  
+                url: form.attr('action'),
+  
+                type: 'POST',
+  
+                data: $('#form input').serialize(),
+  
+                success: function(data, status) {
+                    
+                   console.log(data);
+                  
+                   console.log(status);
+              
+                  }
+  
+              });
+  
+          });
+  
+        });
+  
+    </script>
+
+   <!-- Code End -->
+
+  </body>
+
+</html>
